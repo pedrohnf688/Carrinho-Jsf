@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+        <title>Loja</title>
+    </h:head>
+    <h:body>
+    <h1>Loja</h1>
+    <h:form>
+        <h:dataTable value="#{loja.listaCarrinho}" var="listaCarrinho">
+            <h:column>
+                <f:facet name="header">Id</f:facet>#{listaCarrinho.id}      
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nome</f:facet>#{listaCarrinho.nome}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Descrição</f:facet>#{listaCarrinho.descricao}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Preço</f:facet>#{listaCarrinho.preco}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Estoque</f:facet>#{listaCarrinho.estoque}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Adicionar</f:facet><h:commandButton value="Adicionar Produto" action="#{carrinho.addProduto(listaCarrinho)}" disabled="#{listaCarrinho.estoque == 0}"/>
+            </h:column>
+        </h:dataTable>
+            <h:commandLink value="Ver Carrinho" action="Compras"></h:commandLink><br/>
+            <h:commandLink value="Cadastrar" action="CadastrarProduto"></h:commandLink><br/>
+            
+        </h:form>
+    </h:body>
+</html>

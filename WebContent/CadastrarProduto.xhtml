@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Cadastro de Produtos</title>
+</h:head>
+<body>
+
+	<h1>Cadastro de Produtos</h1>
+
+	<h:form>
+      Nome:<h:inputText id="fnome" value="#{loja.produto.nome}"
+			required="true" requiredMessage="Preencha o Nome do Produto!!" />
+		<h:message id="m1" for="fnome" style="color:red" />
+		<br />
+      
+      Descrição:<h:inputText id="fdescricao"
+			value="#{loja.produto.descricao}" required="true"
+			requiredMessage="Preencha a Descrição do Produto" />
+		<h:message id="m2" for="fdescricao" style="color:red" />
+		<br />
+      
+      Preço:<h:inputText id="fpreco" value="#{loja.produto.preco}"
+			required="true" requiredMessage="Preencha o Preço do Produto" />
+		<h:message id="m3" for="fpreco" style="color:red" />
+		<br />
+      
+      Quantidade:<h:inputText id="festoque"
+			value="#{loja.produto.estoque}" required="true"
+			requiredMessage="Preencha a Quantidade do Produto" />
+		<h:message id="m4" for="festoque" style="color:red" />
+		<br />
+
+		<h:commandButton action="#{loja.CadastrarProduto}" value="Cadastrar" />
+		<br />
+		<h:button outcome="/Carrinho.xhtml" value="Loja"></h:button>
+		<br />
+	</h:form>
+
+</body>
+</html>
